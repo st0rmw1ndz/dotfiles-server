@@ -1,19 +1,23 @@
 " =====================================
 " -- Plugin management --
 " =====================================
+
 call plug#begin()
 
-" Status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 " Theme
 Plug 'morhetz/gruvbox'
+" Status line
+Plug 'itchyny/lightline.vim'
 " File manager
 Plug 'lambdalisue/vim-fern'
 " Comment remap
 Plug 'tpope/vim-commentary'
 " Git diff viewer
 Plug 'airblade/vim-gitgutter'
+" Git integration
+Plug 'tpope/vim-fugitive'
+" Git diff Lightline integration
+Plug 'niklaas/lightline-gitdiff'
 
 call plug#end()
 
@@ -22,11 +26,16 @@ call plug#end()
 " -- Behavior --
 " =====================================
 
+" Disable mode in command line
+set noshowmode
+set laststatus=2
 " Line numbers
 set number
 set relativenumber
 " Cursor line highlight
 set cursorline
+" Mouse support
+set mouse=a
 " Terminal title
 set title
 " Auto reload changes
@@ -41,6 +50,7 @@ set nobackup
 set noswapfile
 set viminfofile=~/.vim/viminfo
 " Performance
+set ttyfast
 set lazyredraw
 " Split behavior
 set splitbelow
@@ -57,8 +67,26 @@ set novisualbell
 set background=dark
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
-" Airline theme
-let g:airline_theme='gruvbox'
+" Lightline theme
+let g:lightline = {
+    \ 'colorscheme': 'gruvbox',
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['gitbranch', 'readonly', 'filename', 'modified'], ['gitdiff']],
+    \   'right': [['lineinfo'], ['percent'], ['filetype']]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head',
+    \ },
+    \ 'component_expand': {
+    \   'gitdiff': 'lightline#gitdiff#get',
+    \ },
+    \ 'component_type': {
+    \   'gitdiff': 'middle',
+    \ },
+    \ }
+let g:lightline#gitdiff#indicator_added = '+ '
+let g:lightline#gitdiff#indicator_deleted = '- '
+let g:lightline#gitdiff#indicator_modified = '~ '
 
 
 " =====================================
