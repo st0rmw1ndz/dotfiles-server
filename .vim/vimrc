@@ -12,6 +12,11 @@ Plug 'lambdalisue/vim-fern'
 call plug#end()
 
 
+" -- Behavior --
+
+set noswapfile
+set viminfofile=~/.vim/viminfo
+
 " -- Theme options --
 
 " Color scheme
