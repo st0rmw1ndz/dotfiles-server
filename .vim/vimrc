@@ -6,13 +6,14 @@ call plug#begin()
 " Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
 " Theme
 Plug 'morhetz/gruvbox'
 " File manager
 Plug 'lambdalisue/vim-fern'
 " Comment remap
 Plug 'tpope/vim-commentary'
+" Git diff viewer
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
