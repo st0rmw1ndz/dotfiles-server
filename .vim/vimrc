@@ -1,23 +1,54 @@
+" =====================================
 " -- Plugin management --
+" =====================================
 call plug#begin()
 
 " Status line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 " Theme
 Plug 'morhetz/gruvbox'
 " File manager
 Plug 'lambdalisue/vim-fern'
+" Comment remap
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
 
+" =====================================
 " -- Behavior --
+" =====================================
 
+" Line numbers
+set number
+set relativenumber
+" Terminal title
+set title
+" Auto reload changes
+set autoread
+" Indentation
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+" Backup/info files
+set nobackup
 set noswapfile
 set viminfofile=~/.vim/viminfo
+" Performance
+set lazyredraw
+" Split behavior
+set splitbelow
+set splitright
+" Visual bell
+" set visualbell
 
+
+" =====================================
 " -- Theme options --
+" =====================================
 
 " Color scheme
 set background=dark
@@ -27,7 +58,9 @@ hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme='gruvbox'
 
 
+" =====================================
 " -- Remaps --
+" ====================================
 
 " Leader options
 let mapleader=' '
@@ -38,3 +71,7 @@ nnoremap <Leader>pr :Fern %:h<CR>
 " Buffer management
 nnoremap <Leader>nw :bnext<CR>
 nnoremap <Leader>nq :bprev<CR>
+nnoremap <Leader>nc :bd<CR>
+" Moving visual block
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
