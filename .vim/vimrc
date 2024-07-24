@@ -1,5 +1,35 @@
+" -- Plugin management --
 call plug#begin()
 
+" Status line
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" Theme
+Plug 'morhetz/gruvbox'
+" File manager
+Plug 'lambdalisue/vim-fern'
 
 call plug#end()
+
+
+" -- Theme options --
+
+" Color scheme
+set background=dark
+colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
+" Airline theme
+let g:airline_theme='gruvbox'
+
+
+" -- Remaps --
+
+" Leader options
+let mapleader=' '
+nnoremap <Space> <Nop>
+" File manager
+nnoremap <Leader>pf :Fern .<CR>
+nnoremap <Leader>pr :Fern %:h<CR>
+" Buffer management
+nnoremap <Leader>nw :bnext<CR>
+nnoremap <Leader>nq :bprev<CR>
