@@ -72,7 +72,6 @@ EOF
 export PS1="\n\[\e[36m\]\t\[\e[m\] \[\e[31m\]\h\[\e[m\] \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Startup screen
-clear
 case "$HOSTNAME" in
     blizzard)
         printf '%s' "\
