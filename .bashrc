@@ -17,8 +17,7 @@ alias ll='ls -l'
 
 # List files on 'cd'
 cd() {
-    builtin cd "$@"
-    ls
+	builtin cd "$@" && ls
 }
 
 # Prompt
