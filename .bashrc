@@ -30,7 +30,7 @@ cd() {
 
 # Prompt
 parse_git_dirty() {
-    [ -n "$(git status --porcelain 2>/dev/null)" ] && echo "*"
+    [ -n "$(git status --porcelain 2>/dev/null)" ] && printf "*"
 }
 
 parse_git_branch() {
