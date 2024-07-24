@@ -24,6 +24,8 @@ call plug#end()
 " Line numbers
 set number
 set relativenumber
+" Cursor line highlight
+set cursorline
 " Terminal title
 set title
 " Auto reload changes
@@ -43,7 +45,7 @@ set lazyredraw
 set splitbelow
 set splitright
 " Visual bell
-" set visualbell
+set novisualbell
 
 
 " =====================================
