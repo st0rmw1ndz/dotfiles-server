@@ -3,6 +3,14 @@ case $- in
 	*) return ;;
 esac
 
+# Shell options
+shopt -s dotglob
+shopt -s nocaseglob
+shopt -s autocd
+shopt -s cdspell
+shopt -s histappend
+shopt -s histverify
+
 # Default options
 alias ls='ls --color=auto -AF'
 alias grep='grep --color=auto'
