@@ -1,6 +1,6 @@
 case $- in
-    *i*) ;;
-    *) return ;;
+*i*) ;;
+*) return ;;
 esac
 
 # Shell options
@@ -21,8 +21,11 @@ alias l='ls'
 alias c='cd'
 alias v='vim'
 alias d='docker'
-alias f='fastfetch'
+alias ff='fastfetch'
 alias g='git'
+
+# Corrections
+alias nvim='vim'
 
 # Other options and commands
 alias ll='ls -l'
