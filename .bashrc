@@ -29,11 +29,13 @@ alias nvim='vim'
 
 # Other options and commands
 alias ll='ls -l'
-alias gs='git status'
+alias gf='git config'
 alias ga='git add'
+alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
 alias gl='git pull'
+alias gd='git diff'
 alias dc='docker compose'
 
 # Common files and directories
@@ -42,8 +44,8 @@ alias D='cd ~/dotfiles'
 alias S='cd ~/.ssh'
 C() {
     case "$HOSTNAME" in
-        blizzard) cd ~/compose/caddy ;;
-        *) printf '%s' "Did you mean to be on blizzard?" ;;
+    blizzard) cd ~/compose/caddy ;;
+    *) printf '%s' "Did you mean to be on blizzard?" ;;
     esac
 }
 
@@ -54,7 +56,7 @@ alias G='vim ~/.gitconfig'
 
 # List files on 'cd'
 cd() {
-	builtin cd "$@" && ls
+    builtin cd "$@" && ls
 }
 
 # Prompt
